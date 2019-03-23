@@ -42,6 +42,9 @@ int main()
     data1.back()--;
     cout<<data1.back()<<endl;
 
+    //data()返回指向数组的指针
+    auto p = data1.data();
+
     //在编译阶段检查是否越界的方法
     cout<<get<99>(data1)<<endl;
 
