@@ -59,18 +59,29 @@ int main()
 
     //emplace插入一个元素
     auto iter = data6.begin();
-    data6.emplace(iter,str,1,4);
+    data6.emplace(iter,str,1,3);
     cout<<data6[0]<<endl;
     cout<<data6[1]<<endl;
 
     //insert插入一个或多个元素
+    data6.insert(data6.begin(),"00");
+    data6.insert(data6.end(),{"11","22"});
 
+    //删除尾部元素
+    data6.pop_back();
 
+    //去掉容器中多余的容量
+    data6.shrink_to_fit();
 
+    //删除一个或多个元素
+    data6.erase(data6.begin());
 
+    //删除所有元素
+    data6.clear();
+    cout<<data6.size()<<endl;
 
-
-
+    //迭代器
+    //同array，插入或删除可能破坏迭代器，需要重新获取
 
     return 0;
 }
