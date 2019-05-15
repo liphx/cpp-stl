@@ -1,8 +1,9 @@
-#include<algorithm>
-#include<iostream>
+#include <algorithm>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-void show(vector<int> &data)
+void show(vector<int>& data)
 {
     for( auto i:data)
         cout<<i<<" ";
@@ -12,29 +13,29 @@ int main()
 {
     vector<int> data {14,5,13,26,4,18,47,26};
 
-    //´´½¨´ó¶¥¶Ñ
+    //åˆ›å»ºå¤§é¡¶å †
     make_heap(begin(data), end(data));
     show(data);
 
-    //´´½¨Ğ¡¶¥¶Ñ
+    //åˆ›å»ºå°é¡¶å †
     make_heap(begin(data), end(data),greater<>());
     show(data);
 
-    //Ìí¼Ó
+    //æ·»åŠ 
     data.push_back(50);
     push_heap(begin(data), end(data),greater<>());
     show(data);
 
-    //É¾³ı
+    //åˆ é™¤
     pop_heap(begin(data), end(data),greater<>());
     data.pop_back();
     show(data);
 
-    //ÅĞ¶ÏÊÇ·ñÒÀ¾ÉÎª¶Ñ
+    //åˆ¤æ–­æ˜¯å¦ä¾æ—§ä¸ºå †
     cout<<is_heap(begin(data),end(data))<<endl;
     cout<<is_heap(begin(data),end(data),greater<>())<<endl;
 
-    //ÅÅĞò
+    //æ’åº
     if(is_heap(begin(data),end(data),greater<>()))
         sort_heap(begin(data),end(data),greater<>());
     show(data);

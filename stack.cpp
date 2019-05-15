@@ -1,24 +1,24 @@
-#include<stack>
-#include<list>
-#include<iostream>
+#include <stack>
+#include <list>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    //´´½¨stack£¬Ä¬ÈÏÊ¹ÓÃdeque×÷Îªµ×²ãÈİÆ÷
+    //åˆ›å»ºstackï¼Œé»˜è®¤ä½¿ç”¨dequeä½œä¸ºåº•å±‚å®¹å™¨
     stack<int> data1;
 
-    //Ê¹ÓÃ list<T> µÄ¶ÑÕ»
+    //ä½¿ç”¨ list<T> çš„å †æ ˆ
     stack<int,list<int> > data2;
 
-    //ÓÃÁíÒ»¸öÈİÆ÷À´³õÊ¼»¯stack
+    //ç”¨å¦ä¸€ä¸ªå®¹å™¨æ¥åˆå§‹åŒ–stack
     list<int> data3 {0,1,2};
     stack<int,list<int> > data4 (data3);
 
-    //¿½±´¹¹Ôìº¯Êı
+    //æ‹·è´æ„é€ å‡½æ•°
     stack<int> data5 {data1};
 
-    //»ù±¾²Ù×÷
+    //åŸºæœ¬æ“ä½œ
     data5.push(0);
     data5.push(1);
     cout<<data5.top()<<endl;

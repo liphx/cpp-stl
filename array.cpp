@@ -1,54 +1,54 @@
-#include<array>
-#include<iostream>
+#include <array>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    //´´½¨100¸öint ĞÍÔªËØµÄarray<>
+    //åˆ›å»º100ä¸ªint å‹å…ƒç´ çš„array<>
     array<int,100> data1;
 
-    //´´½¨²¢³õÊ¼»¯Îª0»òÕßºÍÄ¬ÈÏÔªËØÀàĞÍµÈĞ§µÄÖµ
+    //åˆ›å»ºå¹¶åˆå§‹åŒ–ä¸º0æˆ–è€…å’Œé»˜è®¤å…ƒç´ ç±»å‹ç­‰æ•ˆçš„å€¼
     array<double,100> data2 {};
 
-    //³õÊ¼»¯Ç°3¸öÊı£¬ÆäÓàµÄÎª0
+    //åˆå§‹åŒ–å‰3ä¸ªæ•°ï¼Œå…¶ä½™çš„ä¸º0
     array<long,10> data3 {4,5,6};
 
-    //½«ËùÓĞÔªËØÉè³É¸ø¶¨µÄÖµ
+    //å°†æ‰€æœ‰å…ƒç´ è®¾æˆç»™å®šçš„å€¼
     data1.fill(10);
 
-    //·ÃÎÊÔªËØ,at()»á¼ì²éÊÇ·ñÔ½½ç
+    //è®¿é—®å…ƒç´ ,at()ä¼šæ£€æŸ¥æ˜¯å¦è¶Šç•Œ
     cout<<data1[0]<<endl;
     cout<<data1.at(1)<<endl;
 
-    //¼ÆËãÔªËØµÄ¸öÊı
+    //è®¡ç®—å…ƒç´ çš„ä¸ªæ•°
     cout<<data1.size()<<endl;
 
-    //ÅĞ¶ÏÊÇ·ñÎª¿Õ
+    //åˆ¤æ–­æ˜¯å¦ä¸ºç©º
     cout<<data1.empty()<<endl;
     array<char,0> data4;
     cout<<data4.empty()<<endl;
 
-    //»ùÓÚ·¶Î§µÄÑ­»·
+    //åŸºäºèŒƒå›´çš„å¾ªç¯
     long total = 0;
     for( long x : data3)
         total += x;
     cout<<total<<endl;
 
-    //·µ»ØµÚÒ»¸öÔªËØµÄÒıÓÃ
+    //è¿”å›ç¬¬ä¸€ä¸ªå…ƒç´ çš„å¼•ç”¨
     data1.front()++;
     cout<<data1.front()<<endl;
 
-    //·µ»Ø×îºóÒ»¸öÔªËØµÄÒıÓÃ
+    //è¿”å›æœ€åä¸€ä¸ªå…ƒç´ çš„å¼•ç”¨
     data1.back()--;
     cout<<data1.back()<<endl;
 
-    //data()·µ»ØÖ¸ÏòÊı×éµÄÖ¸Õë
+    //data()è¿”å›æŒ‡å‘æ•°ç»„çš„æŒ‡é’ˆ
     auto p = data1.data();
 
-    //ÔÚ±àÒë½×¶Î¼ì²éÊÇ·ñÔ½½çµÄ·½·¨
+    //åœ¨ç¼–è¯‘é˜¶æ®µæ£€æŸ¥æ˜¯å¦è¶Šç•Œçš„æ–¹æ³•
     cout<<get<99>(data1)<<endl;
 
-    //µü´úÆ÷
+    //è¿­ä»£å™¨
     int sum = 0;
     auto first = data1.begin();
     auto last = data1.end();
@@ -56,26 +56,26 @@ int main()
         sum += *first++;
     cout<<sum<<endl;
 
-    //È«¾Öµü´úÆ÷
+    //å…¨å±€è¿­ä»£å™¨
     auto g_first = begin(data1);
     auto g_last = end(data1);
 
-    //·´Ïòµü´úÆ÷
+    //åå‘è¿­ä»£å™¨
     auto rfirst = data1.rbegin();
     auto rlast = data1.rend();
     auto g_rfirst = rbegin(data1);
     auto g_rlast = rend(data1);
 
-    //constµü´úÆ÷
+    //constè¿­ä»£å™¨
     auto cfirst = data1.cbegin();
     auto clast = data1.cend;
 
-    //±È½Ï,ÔªËØ¸öÊıÒªÏàÍ¬
+    //æ¯”è¾ƒ,å…ƒç´ ä¸ªæ•°è¦ç›¸åŒ
     array<int,100> data5;
     data5.fill(1);
     cout<<(data1<data5)<<endl;
 
-    //¸³Öµ
+    //èµ‹å€¼
     data1 = data5;
     cout<<(data1==data5)<<endl;
 

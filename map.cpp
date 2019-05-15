@@ -1,5 +1,5 @@
-#include<map>
-#include<iostream>
+#include <map>
+#include <iostream>
 using namespace std;
 
 int main()

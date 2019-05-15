@@ -1,87 +1,87 @@
-#include<vector>
-#include<iostream>
+#include <vector>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    //´´½¨vector
+    //åˆ›å»ºvector
     vector<int> data1;
 
-    //Ôö¼ÓÈİÆ÷µÄÈİÁ¿£¬ÈôÈİÁ¿²»Ğ¡ÓÚ²ÎÊıÔòÎŞĞ§
+    //å¢åŠ å®¹å™¨çš„å®¹é‡ï¼Œè‹¥å®¹é‡ä¸å°äºå‚æ•°åˆ™æ— æ•ˆ
     data1.reserve(20);
 
-    //³õÊ¼»¯ÁĞ±í´´½¨vector
+    //åˆå§‹åŒ–åˆ—è¡¨åˆ›å»ºvector
     vector<int> data2 {1,2,3,4,5};
 
-    //³õÊ¼»¯ÔªËØµÄ¸öÊı,Ä¬ÈÏÖµÎª0
+    //åˆå§‹åŒ–å…ƒç´ çš„ä¸ªæ•°,é»˜è®¤å€¼ä¸º0
     vector<int> data3 (10);
 
-    //Ö¸¶¨ÆäËûÄ¬ÈÏÖµ
+    //æŒ‡å®šå…¶ä»–é»˜è®¤å€¼
     vector<int> data4 (10,-1);
 
-    //ÈİÁ¿
+    //å®¹é‡
     cout<<data1.capacity()<<endl;
 
-    //´óĞ¡
+    //å¤§å°
     cout<<data1.size()<<endl;
 
-    //¸Ä±ä´óĞ¡
+    //æ”¹å˜å¤§å°
     vector<int> data5 {1,2};
     data5.resize(3);    // {1,2,0}
     data5.resize(5,1);  // {1,2,0,1,1}
     data5.resize(4);    // {1,2,0,1}
 
-    //·ÃÎÊÔªËØ,µ«²»ÄÜÉú³ÉĞÂÔªËØ
+    //è®¿é—®å…ƒç´ ,ä½†ä¸èƒ½ç”Ÿæˆæ–°å…ƒç´ 
     cout<<data5[3]<<endl;
     cout<<data5.at(0)<<endl;
 
-    //·µ»ØµÚÒ»¸öÔªËØµÄÒıÓÃ
+    //è¿”å›ç¬¬ä¸€ä¸ªå…ƒç´ çš„å¼•ç”¨
     data5.front()++;
     cout<<data5.front()<<endl;
 
-    //·µ»Ø×îºóÒ»¸öÔªËØµÄÒıÓÃ
+    //è¿”å›æœ€åä¸€ä¸ªå…ƒç´ çš„å¼•ç”¨
     data5.back()--;
     cout<<data5.back()<<endl;
 
-    //data()·µ»ØÖ¸ÏòÊı×éµÄÖ¸Õë
+    //data()è¿”å›æŒ‡å‘æ•°ç»„çš„æŒ‡é’ˆ
     auto p = data5.data();
 
-    //ÔÚÄ©Î²Ôö¼ÓÔªËØ
+    //åœ¨æœ«å°¾å¢åŠ å…ƒç´ 
     data1.push_back(1);
     cout<<data1.size()<<endl;
     cout<<data1[0]<<endl;
 
-    //Ê¹ÓÃemplace_backÌí¼ÓÔªËØ
+    //ä½¿ç”¨emplace_backæ·»åŠ å…ƒç´ 
     vector<string> data6;
     string str = "hello";
-    data6.emplace_back(str,0,3);  //µ÷ÓÃstringµÄ¹¹Ôìº¯ÊıÉú³É¶ÔÏó
+    data6.emplace_back(str,0,3);  //è°ƒç”¨stringçš„æ„é€ å‡½æ•°ç”Ÿæˆå¯¹è±¡
     cout<<data6[0]<<endl;         //"hel"
 
-    //emplace²åÈëÒ»¸öÔªËØ
+    //emplaceæ’å…¥ä¸€ä¸ªå…ƒç´ 
     auto iter = data6.begin();
     data6.emplace(iter,str,1,3);
     cout<<data6[0]<<endl;
     cout<<data6[1]<<endl;
 
-    //insert²åÈëÒ»¸ö»ò¶à¸öÔªËØ
+    //insertæ’å…¥ä¸€ä¸ªæˆ–å¤šä¸ªå…ƒç´ 
     data6.insert(data6.begin(),"00");
     data6.insert(data6.end(),{"11","22"});
 
-    //É¾³ıÎ²²¿ÔªËØ
+    //åˆ é™¤å°¾éƒ¨å…ƒç´ 
     data6.pop_back();
 
-    //È¥µôÈİÆ÷ÖĞ¶àÓàµÄÈİÁ¿
+    //å»æ‰å®¹å™¨ä¸­å¤šä½™çš„å®¹é‡
     data6.shrink_to_fit();
 
-    //É¾³ıÒ»¸ö»ò¶à¸öÔªËØ
+    //åˆ é™¤ä¸€ä¸ªæˆ–å¤šä¸ªå…ƒç´ 
     data6.erase(data6.begin());
 
-    //É¾³ıËùÓĞÔªËØ
+    //åˆ é™¤æ‰€æœ‰å…ƒç´ 
     data6.clear();
     cout<<data6.size()<<endl;
 
-    //µü´úÆ÷
-    //Í¬array£¬²åÈë»òÉ¾³ı¿ÉÄÜÆÆ»µµü´úÆ÷£¬ĞèÒªÖØĞÂ»ñÈ¡
+    //è¿­ä»£å™¨
+    //åŒarrayï¼Œæ’å…¥æˆ–åˆ é™¤å¯èƒ½ç ´åè¿­ä»£å™¨ï¼Œéœ€è¦é‡æ–°è·å–
 
     return 0;
 }

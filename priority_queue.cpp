@@ -1,20 +1,20 @@
-#include<queue>
-#include<iostream>
+#include <queue>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    //´´½¨ÓÅÏÈ¼¶¶ÓÁĞ
-    //Ä¬ÈÏµ×²ãÈİÆ÷Îªvector
-    //½ÓÊÜµÚÈı¸ö²ÎÊıÎªº¯Êı¶ÔÏó£¬ÓÃÀ´¾ö¶¨ÔªËØË³Ğò
+    //åˆ›å»ºä¼˜å…ˆçº§é˜Ÿåˆ—
+    //é»˜è®¤åº•å±‚å®¹å™¨ä¸ºvector
+    //æ¥å—ç¬¬ä¸‰ä¸ªå‚æ•°ä¸ºå‡½æ•°å¯¹è±¡ï¼Œç”¨æ¥å†³å®šå…ƒç´ é¡ºåº
     priority_queue<int, vector<int> > data1;
 
-    //³õÊ¼»¯£¬×Ô¶¯ÅÅĞò
+    //åˆå§‹åŒ–ï¼Œè‡ªåŠ¨æ’åº
     vector<int> data2 {2,1,5};
     priority_queue<int> data3 {data2.begin(), data2.end()};
     cout<<data3.top()<<endl;
 
-    //»ù±¾²Ù×÷
+    //åŸºæœ¬æ“ä½œ
     data3.push(10);
     cout<<data3.size()<<endl;
     cout<<data3.top()<<endl;

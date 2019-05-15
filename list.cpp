@@ -1,22 +1,22 @@
-#include<list>
-#include<iostream>
+#include <list>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    //´´½¨list
+    //åˆ›å»ºlist
     list<int> data1;
     list<int> data2 (10);
     list<int> data3 (10,1);
     list<int> data4 {1,2,3,4,5};
     list<int> data5 {data4};
 
-    //·ÃÎÊlist£¬listµÄµü´úÆ÷ÎªË«Ïòµü´úÆ÷
+    //è®¿é—®listï¼Œlistçš„è¿­ä»£å™¨ä¸ºåŒå‘è¿­ä»£å™¨
     cout<<data5.size()<<endl;
     cout<<*++data5.begin()<<endl;
     cout<<*--data5.end()<<endl;
 
-    //Ìí¼ÓÔªËØ
+    //æ·»åŠ å…ƒç´ 
     data5.push_front(0);
     data5.push_back(6);
     data5.emplace_front(-1);
@@ -29,27 +29,27 @@ int main()
         cout<<*first++<<" ";
     cout<<endl;
 
-    //É¾³ıÔªËØ
+    //åˆ é™¤å…ƒç´ 
     data5.clear();
     cout<<data5.size()<<endl;
     list<int> data6 {0,0,0,5,1,2,5,5,0};
     data6.erase(--data6.end());
     cout<<*--data6.end()<<endl;
-    data6.remove(0);                              //ÒÆ³ıËùÓĞ2
+    data6.remove(0);                              //ç§»é™¤æ‰€æœ‰2
     cout<<*data6.begin()<<endl;
-    data6.remove_if([](int n){return n%2 == 0;}); //ÒÆ³ıÅ¼Êı
+    data6.remove_if([](int n){return n%2 == 0;}); //ç§»é™¤å¶æ•°
     cout<<data6.size()<<endl;
-    data6.unique();                               //ÒÆ³ıÁ¬ĞøÖØ¸´µÄÊı
+    data6.unique();                               //ç§»é™¤è¿ç»­é‡å¤çš„æ•°
     cout<<data6.size()<<endl;
 
-    //ÅÅĞò
+    //æ’åº
     list<int> data7 {2,2,1,0,5,3};
-    data7.sort();                                 //´ÓĞ¡µ½´ó
+    data7.sort();                                 //ä»å°åˆ°å¤§
     cout<<*data7.begin()<<endl;
     data7.sort([](int a,int b){return a>b?a:b;});
     cout<<*data7.begin()<<endl;
 
-    //ºÏ²¢
+    //åˆå¹¶
     list<int> data8 {1,4,57,-8,63};
     list<int> data9 {87,0,-8,49};
     data8.sort();
@@ -62,4 +62,3 @@ int main()
 
     return 0;
 }
-

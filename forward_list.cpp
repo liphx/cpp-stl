@@ -1,17 +1,17 @@
-#include<forward_list>
-#include<iterator>
-#include<iostream>
+#include <forward_list>
+#include <iterator>
+#include <iostream>
 using namespace std;
 
 int main()
 {
     forward_list<int> data {1,2,3};
-    cout<<distance(data.begin(),data.end())<<endl; //Ã»ÓÐsize()º¯ÊýÀ´»ñÈ¡´óÐ¡
-    data.push_front(0);  //Ã»ÓÐpush_back()
+    cout<<distance(data.begin(),data.end())<<endl; //æ²¡æœ‰size()å‡½æ•°æ¥èŽ·å–å¤§å°
+    data.push_front(0);  //æ²¡æœ‰push_back()
     data.insert_after(data.begin(),0);
     data.pop_front();
     cout<<data.front()<<endl;
-    //sort() merge() remove() remove_if() unique() Í¬list
+    //sort() merge() remove() remove_if() unique() åŒlist
 
     return 0;
 }
